@@ -1,9 +1,12 @@
 <div class = container >
 <h1>My List Of Superpower</h1>
-
+<ul>
 <% @superpowers.each do |superpower|%>
-<%= superpower.name %>
+<li><%= superpower.name %></li>
+<li><%= superpower.category %></li>
+<li><%= superpower.price%></li>
 <% end %>
+</ul>
 </div>
 
 <%= link_to "create a new superpower", new_superpower_path, class: "btn btn-primary" %>
