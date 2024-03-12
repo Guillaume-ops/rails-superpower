@@ -7,3 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+user1 = User.create!(email: "superman@lewagon.com", password: "123456",name: "Superman", age: "35", country: "États-Unis", phone_number: "555-123", rating:"5")
+user2 = User.create!(email: "batman@lewagon.com", password: "123456", name: "Batman", age: "40", country: "États-Unis", phone_number: "555-123", rating:"4")
+user3 = User.create!(email: "ironman@lewagon.com", password: "123456", name: "Iron Man", age: "35", country: "États-Unis", phone_number: "555-123", rating:"5")
+
+Superpower.create!(name: "Superman", category: "DC Comics", price: "100€/day", user: user1)
+Superpower.create!(name: "Batman", category: "DC Comics", price: "50€/day", user: user2)
+Superpower.create!(name: "Iron Man", category: "Marvel", price: "100€/day", user: user3)
