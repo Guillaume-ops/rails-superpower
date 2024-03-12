@@ -1,0 +1,10 @@
+<h3> I rent my Superpower</h3>
+
+<%= simple_form_for @superpower do |f| %>
+<%= f.input :name, placaholder: 'Super-heros' %>
+<%= f.input :category, placeholder: 'Category' %>
+<%= f.input :price %>
+<%= f.submit class: 'btn btn-primary' %>
+<% end  %>
+
+<%= link_to "Back to list", superpowers_path, class: "btn btn-primary" %>
