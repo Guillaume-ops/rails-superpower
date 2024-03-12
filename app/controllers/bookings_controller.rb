@@ -25,11 +25,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
   @booking.user = user
-  if @booking.save
-    redirect_to root_path, notice: 'Votre superpouvoir a bien été réservé'
-  else
-    flash.now[:alert] = 'Nous avons rencontré un problème avec la réservation de votre pouvoir'
-    render :new
+    if @booking.save
+      redirect_to root_path, notice: 'Votre superpouvoir a bien été réservé'
+    else
+     flash.now[:alert] = 'Nous avons rencontré un problème avec la réservation de votre pouvoir'
+      render :new
+   end
   end
 
   def destroy
@@ -50,3 +51,4 @@ Private
  def set_booking
   @booking = Booking.find(params[:id])
  end
+end

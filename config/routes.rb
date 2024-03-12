@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   resources :superpowers, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create, :new]
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show], as: :dashboard
 end
