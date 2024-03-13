@@ -15,7 +15,7 @@ class SuperpowersController < ApplicationController
     @superpower = Superpower.new(superpower_params)
     @superpower.user = current_user
     if @superpower.save
-      redirect_to superpowers_path(@superpower)
+      redirect_to superpower_path
     else
       render :new, status: :unprocessable_entity
     end

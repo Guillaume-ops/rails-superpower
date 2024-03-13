@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action only: [:new, :create]
   def index
     @bookings = Booking.all
     # Ou une logique plus complexe pour récupérer les réservations à afficher dans l'index
@@ -21,12 +21,14 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = user
+    @booking.user = current_user
+    @superpower = Superpower.find(params[:superpower_id])
+    @booking.superpower = @superpower
     if @booking.save
-      redirect_to root_path, notice: 'Votre superpouvoir a bien été réservé'
+      redirect_to dashboard_path(current_user), notice: 'Votre superpouvoir a bien été réservé'
     else
-      flash.now[:alert] = 'Nous avons rencontré un problème avec la réservation de votre pouvoir'
-      render :new
+      #flash.now[:alert] = 'Nous avons rencontré un problème avec la réservation de votre pouvoir'
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -35,14 +37,15 @@ class BookingsController < ApplicationController
     redirect_to root_path, notice: 'Nous avons bien pris en compte la suppression de votre réservation'
   end
 
-private
+  private
+
  # Méthode pour sécuriser les paramètres de réservation
- def booking_params
-  params.require(:booking).permit(:superpower_id, :start_date, :end_date)
- end
+  def booking_params
+    params.require(:booking).permit(:superpower_id, :date_begin, :date_end)
+  end
 
  # Méthode pour récupérer la réservation à modifier ou à supprimer
- def set_booking
-  @booking = Booking.find(params[:id])
- end
+  #def set_booking
+    #@booking = Booking.find(params[:id])
+  #end
 end
