@@ -7,6 +7,11 @@
 <li><%= superpower.price%></li>
 <% end %>
 </ul>
+  <ul>
+    <% @superpowers.each do |superpower|%>
+      <li><%= superpower.name %></li>
+    <% end %>
+  </ul>
 </div>
 
 <%= link_to "create a new superpower", new_superpower_path, class: "btn btn-primary" %>
