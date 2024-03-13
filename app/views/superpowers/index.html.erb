@@ -1,12 +1,13 @@
 <div class = container >
   <h1>My List Of Superpower</h1>
   <ul>
-    <% @superpowers.each do |superpower|%>
-    <li> <%= superpower.name %> </li>
-    <li> <%= superpower.category %> </li>
-    <li> <%= superpower.price %> </li>
-    <% end %>
-  </ul>
+   <div class="cards-power">
+        <% @superpowers.each do |superpower| %>
+           <div class="card-power" style="background-image: url('<%= superpower.img_url %>')">
+             <%= superpower.name %>
+          </div>
+         <% end %>
+    </div>
 </div>
 
 <%= link_to "create a new superpower", new_superpower_path, class: "btn btn-primary" %>

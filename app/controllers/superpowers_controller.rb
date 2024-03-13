@@ -8,7 +8,7 @@ class SuperpowersController < ApplicationController
   end
 
   def show
-    @superpower = Superpower.id
+    @superpower = Superpower.find(params[:id])
   end
 
   def create
