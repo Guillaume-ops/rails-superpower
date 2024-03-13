@@ -12,7 +12,7 @@
   width: 40px;
 }
 
-h2 {
+h1,h2,p {
 padding: 10px;
 color: red;
 text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -40,7 +40,8 @@ text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 .card-category:hover {
   transition: background 0.3s;
-  filter: brightness(1.4);;
+  filter: brightness(1.4);
+  transform: scale(1.1);
 }
 .cards-category {
   display: grid;
@@ -97,7 +98,15 @@ text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   cursor: pointer;
+  text-decoration: none;
 }
+
+.card-power:hover {
+  transition: background 0.3s;
+  filter: brightness(1.2);
+  transform: scale(1.1);
+}
+
 .cards-power {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
