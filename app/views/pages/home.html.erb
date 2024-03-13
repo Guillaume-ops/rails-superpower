@@ -1,7 +1,7 @@
 
 <div class="text-center">
-<h1>SuperpowerBnB</h1>
-<p>Choose your side and your superpower thanks to our superheroes and supervillains at your disposal!</p>
+<h1><u><strong>SuperpowerBnb</strong></u></h1>
+<p>Choose your side and your superpower thanks to our heroes at your disposal!</p>
 </div>
 <div class="container-cards">
   <h2><u><strong>Choose your universe:</strong></u></h2>
@@ -21,11 +21,13 @@
   <h2><u><strong>Some powers you can pick:</strong></u></h2>
     <div class="cards-power">
 
-        <% @superpowers.each do |superpower| %>
+        <% @superpowers.take(6).each do |superpower| %>
+          <%= link_to superpower_path(superpower) do %>
            <div class="card-power" style="background-image: url('<%= superpower.img_url %>')">
              <%= superpower.name %>
           </div>
          <% end %>
+        <% end %>
 
     </div>
   </div>
