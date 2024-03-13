@@ -13,7 +13,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <img src="https://clipart-library.com/img/1528343.png
@@ -32,8 +32,8 @@
               <%= link_to "Login", new_user_session_path, class:"nav-link"%>
             <% end %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">All powers</a>
+          <li class="nav-item active">
+            <%= link_to "All powers", superpowers_path, class:"nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://coolappsman.com/wp-content/uploads/2013/06/hi-guess-the-character-04.jpg" />
