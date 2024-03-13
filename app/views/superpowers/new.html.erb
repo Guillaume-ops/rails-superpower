@@ -2,7 +2,7 @@
 
 <%= simple_form_for @superpower do |f| %>
 <%= f.input :name, placaholder: 'Super-heros' %>
-<%= f.input :category, placeholder: 'Category' %>
+<%= f.input :category, collection: ["Marvel", "DC Comics", "Disney"]%>
 <%= f.input :price %>
 <%= f.submit class: 'btn btn-primary' %>
 <% end  %>

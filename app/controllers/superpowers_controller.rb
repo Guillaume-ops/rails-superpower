@@ -8,13 +8,14 @@ class SuperpowersController < ApplicationController
   end
 
   def show
-    @superpower = Superpower.new
+    @superpower = Superpower.id
   end
 
   def create
     @superpower = Superpower.new(superpower_params)
-    if @superpower.save!
-      redirect_to superpower_path(@superpower)
+    @superpower.user = current_user
+    if @superpower.save
+      redirect_to superpowers_path(@superpower)
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,6 +24,6 @@ class SuperpowersController < ApplicationController
   private
 
   def superpower_params
-    params.require(:superpower).permit(:name, :category)
+    params.require(:superpower).permit(:name, :category, :price)
   end
 end
