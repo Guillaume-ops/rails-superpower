@@ -3,17 +3,17 @@ class Booking < ApplicationRecord
   belongs_to :superpower
   belongs_to :user
 
-  validates :start_date, presence: true
-  validates :end_date, presence: true
-  validate :end_date_after_start_date
+  validates :date_begin, presence: true
+  validates :date_end, presence: true
+  #validate :date_end_after_date_begin
 
-  private
+  #private
 
-  def end_date_after_start_date
-    return if end_date.blank? || start_date.blank?
+  # def end_date_after_start_date
+  #   return if date_end.blank? || date_begin.blank?
 
-    if end_date <= start_date
-      errors.add(:end_date, "la date entrée est antérieur à la date de réservation")
-    end
-  end
+  #   if date_end <= date_begin
+  #     errors.add(:end_date, "la date entrée est antérieur à la date de réservation")
+  #   end
+  # end
 end
