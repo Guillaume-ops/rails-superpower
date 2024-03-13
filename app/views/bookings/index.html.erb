@@ -1,2 +1,31 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1>Liste des Réservations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Utilisateur</th>
+      <th>Superpouvoir</th>
+      <th>Date de début</th>
+      <th>Date de fin</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.user.email %></td>
+        <td><%= booking.superpower.name %></td>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+        <td>
+          <%= link_to 'Modifier', edit_booking_path(booking) %>
+          <%= link_to 'Supprimer', booking, method: :delete, data: { confirm: 'Êtes-vous sûr?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nouvelle Réservation', new_booking_path %>
