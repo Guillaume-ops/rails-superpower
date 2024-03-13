@@ -25,9 +25,9 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to root_path, notice: 'Votre superpouvoir a bien été réservé'
     else
-     flash.now[:alert] = 'Nous avons rencontré un problème avec la réservation de votre pouvoir'
+      flash.now[:alert] = 'Nous avons rencontré un problème avec la réservation de votre pouvoir'
       render :new
-   end
+    end
   end
 
   def destroy
