@@ -20,22 +20,12 @@
     </div>
   <% end %>
 
-  <form action="<%= bookings_path %>" method="post">
-    <div class="start_date">
-      <label for="booking_start_date">Start Date:</label>
-      <input type="date" id="booking_start_date" name="booking[start_date]">
-    </div>
+  <%= simple_form_for [@superpower, @booking] do |f| %>
+    <%= f.input :date_begin, html5: true %>
+    <%= f.input :date_end, html5: true %>
+    <%= f.submit %>
+  <% end  %>
 
-    <div class="end_date">
-      <label for="booking_end_date">End Date:</label>
-      <input type="date" id="booking_end_date" name="booking[end_date]">
-    </div>
-
-    <div class="actions">
-      <input type="submit" value="Create Booking">
-    </div>
-  </form>
-
-  <a href="<%= bookings_path %>">Back</a>
+  <%= link_to 'Back', superpowers_path, class: 'btn btn-primary' %>
 </body>
 </html>
