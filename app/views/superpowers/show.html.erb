@@ -1,7 +1,7 @@
 <h1>My new superpower</h1>
 <div class="container" style="text-center">
 
- <img class="card-superpower" src="<%= @superpower.img_url %>">
+<%= cl_image_tag @superpower.photo.key, height: 300, width: 400, crop: :fill %>
 
 <div class="super-heros">
   <h2> <%= @superpower.name %> </h2>
@@ -17,7 +17,3 @@
   <% end  %>
   </div>
 </div>
-
-<% @article.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
