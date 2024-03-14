@@ -1,19 +1,24 @@
 <h1>My new superpower</h1>
-<div class="container" style="text-center">
 
-<%= cl_image_tag @superpower.photo.key, height: 500, width: 400, crop: :fill %>
+<div class="container-superpower">
 
-<div class="super-heros">
-  <h2> <%= @superpower.name %> </h2>
-  <h3> Catégorie : <%= @superpower.category %> </h3>
-  <h4> <%= @superpower.price %> $ </h4>
+
+  <div class="card-superpower">
+    <%= cl_image_tag @superpower.photo.key, crop: :fill %>
+    <div class="card-power-infos">
+        <div>
+          <h2> <%= @superpower.name %> </h2>
+          <h3> Category : <%= @superpower.category %> </h3>
+          <h4> <%= @superpower.price %> $ </h4>
+        </div>
+    </div>
   </div>
 
-<div class="booking">
-  <%= simple_form_for [@superpower, @booking] do |f| %>
-    <%= f.input :date_begin, html5: true %>
-    <%= f.input :date_end, html5: true %>
-    <%= f.submit %>
-  <% end  %>
-  </div>
+  <div class="booking">
+    <%= simple_form_for [@superpower, @booking] do |f| %>
+      <%= f.input :date_begin, html5: true %>
+      <%= f.input :date_end, html5: true %>
+      <%= f.submit %>
+    <% end  %>
+    </div>
 </div>
