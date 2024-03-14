@@ -3,10 +3,12 @@
   <ul>
    <div class="cards-power">
         <% @superpowers.each do |superpower| %>
+           <%= link_to superpower_path(superpower) do %>
            <div class="card-power" style="background-image: url('<%= superpower.img_url %>')">
              <%= superpower.name %>
              <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
           </div>
+          <% end %>
          <% end %>
     </div>
 </div>
