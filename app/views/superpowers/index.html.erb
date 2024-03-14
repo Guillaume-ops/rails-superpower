@@ -1,11 +1,11 @@
 <div class = container >
   <h1>My List Of Superpower</h1>
-  <ul>
+
    <div class="cards-power">
         <% @superpowers.each do |superpower| %>
            <%= link_to superpower_path(superpower) do %>
-            <div class="card-power">
-              <%= cl_image_tag superpower.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="card-power" style= "background-image: url('<%= cl_image_tag superpower.photo.key, crop: :fill %>')">
+
               <%= superpower.name %>
             </div>
           <% end %>
