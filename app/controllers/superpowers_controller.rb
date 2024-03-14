@@ -1,6 +1,11 @@
 class SuperpowersController < ApplicationController
   def index
     @superpowers = Superpower.all
+    if params[:query]
+      @superpowers = Superpower.where(category: params[:query])
+    else
+      @superpowers = Superpower.all
+    end
   end
 
   def new
