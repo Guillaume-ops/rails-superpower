@@ -33,7 +33,7 @@
 
       <% @superpowers.take(6).each do |superpower| %>
         <%= link_to superpower_path(superpower) do %>
-          <div class="card-power" style="background-image: url('<%= superpower.img_url %>')">
+          <div class="card-power" style="background-image: url('<%= cl_image_path superpower.photo.key, crop: :fill %>')">
             <%= superpower.name %>
           </div>
         <% end %>
