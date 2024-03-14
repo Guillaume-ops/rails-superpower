@@ -13,4 +13,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :new]
   end
   resources :users, only: [:show], as: :dashboard
+  resources :bookings, only: [:destroy]
+  resources :users, only: [:destroy]
 end
