@@ -1,19 +1,21 @@
 // Specific CSS for your home-page
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-h1,h2,p {
+.banner {
+background-position: left;
+background-size: 130%;
+background-repeat: no-repeat;
+border-radius: 10px;
+justify-content: center;
+width: 60%;
+margin-left: 20%;
+border: #D23333 2px;
 padding: 10px;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+h1,h2,h5,p {
+padding: 5px;
 color: red;
 text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
@@ -21,7 +23,7 @@ text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 .container-cards {
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 4px;
+  padding: 10px;
 }
 .card-category {
   background-size: cover;
@@ -98,6 +100,9 @@ text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   cursor: pointer;
+}
+
+a{
   text-decoration: none;
 }
 

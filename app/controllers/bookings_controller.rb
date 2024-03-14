@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action only: [:new, :create]
+  before_action :set_booking, only: [:destroy]
   def index
     @bookings = Booking.all
     # Ou une logique plus complexe pour récupérer les réservations à afficher dans l'index
@@ -45,7 +45,7 @@ class BookingsController < ApplicationController
   end
 
  # Méthode pour récupérer la réservation à modifier ou à supprimer
-  #def set_booking
-    #@booking = Booking.find(params[:id])
-  #end
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
 end

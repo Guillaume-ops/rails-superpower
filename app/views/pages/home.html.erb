@@ -1,33 +1,37 @@
 
-<div class="text-center">
-<h1><u><strong>SuperpowerBnb</strong></u></h1>
-<p>Choose your side and your superpower thanks to our heroes at your disposal!</p>
-</div>
-<div class="container-cards">
-  <h2><u><strong>Choose your universe:</strong></u></h2>
-  <div class="cards-category">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaperaccess.com/full/4594322.jpg)" >
-      Marvel
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.looper.com/img/gallery/why-what-just-happened-to-dc-universe-is-so-exciting/l-intro-1600458433.jpg)">
-      DC Comics
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.nichesites.pikoya.com/wwgdb_com/images/games/15123/gallery/47590.jpg)">
-      Disney
-    </div>
+  <div class="banner" style="background-image: url(https://data.freehdw.com/dc-comics-superman-superheroes-supergirl-michael-turner-free-pictures.jpg)">
+    <h1 class="text-center"><strong>SuperpowerBnb</strong></h1>
+    <h5 class="text-center">Choose your side and your superpower thanks to our heroes at your disposal!</h5>
   </div>
-  <h2><u><strong>Some powers you can pick:</strong></u></h2>
+
+  <div class="container-cards">
+     <h2 class="m-3"><strong>Choose your universe:</strong></h2>
+
+      <div class="cards-category">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaperaccess.com/full/4594322.jpg)" >
+           Marvel
+        </div>
+
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.looper.com/img/gallery/why-what-just-happened-to-dc-universe-is-so-exciting/l-intro-1600458433.jpg)">
+           DC Comics
+        </div>
+
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.nichesites.pikoya.com/wwgdb_com/images/games/15123/gallery/47590.jpg)">
+           Disney
+        </div>
+      </div>
+
+  <h2 class="m-3"><strong>Some powers you can pick:</strong></h2>
+
     <div class="cards-power">
 
-        <% @superpowers.take(6).each do |superpower| %>
-          <%= link_to superpower_path(superpower) do %>
-           <div class="card-power" style="background-image: url('<%= superpower.img_url %>')">
-             <%= superpower.name %>
+      <% @superpowers.take(6).each do |superpower| %>
+        <%= link_to superpower_path(superpower) do %>
+          <div class="card-power" style="background-image: url('<%= superpower.img_url %>')">
+            <%= superpower.name %>
           </div>
-         <% end %>
         <% end %>
+      <% end %>
 
     </div>
   </div>

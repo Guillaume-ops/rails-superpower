@@ -1,8 +1,19 @@
 <h1>My new superpower</h1>
+<div class="container" style="text-center">
 
-<h1><%= @superpower.name %></h1>
-<h1><%= @superpower.category %></h1>
-<h2><%= @superpower.price %></h2>
-
-<%= link_to "Booking this superpower", new_superpower_booking_path(@superpower), class: 'btn btn-primary'%>
 <%= cl_image_tag @superpower.photo.key, height: 300, width: 400, crop: :fill %>
+
+<div class="super-heros">
+  <h2> <%= @superpower.name %> </h2>
+  <h3> Catégorie : <%= @superpower.category %> </h3>
+  <h4> <%= @superpower.price %> $ </h4>
+  </div>
+
+<div class="booking">
+  <%= simple_form_for [@superpower, @booking] do |f| %>
+    <%= f.input :date_begin, html5: true %>
+    <%= f.input :date_end, html5: true %>
+    <%= f.submit %>
+  <% end  %>
+  </div>
+</div>
