@@ -5,3 +5,7 @@
 <h2><%= @superpower.price %></h2>
 
 <%= link_to "Booking this superpower", new_superpower_booking_path(@superpower), class: 'btn btn-primary'%>
+
+<% @article.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>

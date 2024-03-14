@@ -5,6 +5,7 @@
         <% @superpowers.each do |superpower| %>
            <div class="card-power" style="background-image: url('<%= superpower.img_url %>')">
              <%= superpower.name %>
+             <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
           </div>
          <% end %>
     </div>
