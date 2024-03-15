@@ -19,13 +19,13 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-      <div class="search-form-control form-group">
+    <div class="search-form-control form-group">
         <div class="col">
           <%= form_with url: superpowers_path, method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
               params[:query],
-              class: "form-control mx-1",
-              placeholder: "Superhero or category"
+              class: "form-control mx-1 rounded-pill",
+              placeholder:"Superhero or category"
             %>
             <%= submit_tag "Search", name: "", class: "btn btn-gradient" %>
           <% end %>

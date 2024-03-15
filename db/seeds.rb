@@ -20,10 +20,6 @@ user5 = User.create!(email: "spiderman@lewagon.com", password: "123456", name: "
 user6 = User.create!(email: "thor@lewagon.com", password: "123456", name: "Thor", age: "2000", country: "États-Unis", phone_number: "555-123", rating:"4")
 user7 = User.create!(email: "elastigirl@lewagon.com", password: "123456", name: "Elastigirl", age: "39", country: "États-Unis", phone_number: "555-123", rating:"5")
 
-superpower1 = Superpower.new(name: "Superman", category: "DC Comics", price: "100€/day", img_url: "https://wallpapercave.com/wp/wp6926447.jpg", user: user1)
-file = URI.open("https://wallpapercave.com/wp/wp6926447.jpg")
-superpower1.photo.attach(io: file, filename: "Superman.jpg", content_type: "image/jpg")
-superpower1.save!
 superpower2 = Superpower.new(name: "Batman", category: "DC Comics", price: "50€/day", img_url: "https://getwallpapers.com/wallpaper/full/d/9/d/824786-popular-batman-dark-knight-wallpaper-1080x1920-for-ios.jpg", user: user2)
 file = URI.open("https://getwallpapers.com/wallpaper/full/d/9/d/824786-popular-batman-dark-knight-wallpaper-1080x1920-for-ios.jpg")
 superpower2.photo.attach(io: file, filename: "Superman.jpg", content_type: "image/jpg")
