@@ -1,10 +1,9 @@
 class SuperpowersController < ApplicationController
   def index
     @superpowers = Superpower.all
-    if params[:query]
-      @superpowers = Superpower.where(category: params[:query])
-    else
-      @superpowers = Superpower.all
+    if params[:query].present?
+      sql_subquery = "name ILIKE :query OR category ILIKE :query"
+      @superpowers = @superpowers.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
