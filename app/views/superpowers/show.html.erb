@@ -9,7 +9,7 @@
         <div>
           <h2> <%= @superpower.name %> </h2>
           <h3> Category : <%= @superpower.category %> </h3>
-          <h4> <%= @superpower.price %> $ </h4>
+          <h4> <%= @superpower.price %> $ /day </h4>
         </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
       <%= f.input :date_end,
               as: :string,
               input_html: { data: { controller: "datepicker" } } %>
-      <%= f.submit %>
+      <%= f.submit class: 'btn btn-gradient'%>
     <% end %>
   </div>
 </div>
