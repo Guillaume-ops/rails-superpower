@@ -26,7 +26,5 @@
         <p>No reservations found.</p>
       <% end %>
   </div>
-  <% if current_user == booking.sup %>
-    <%= button_to "Delete Superpower", user_path(@user), class: "btn btn-gradient", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  <% end %>
+  
 </div>
