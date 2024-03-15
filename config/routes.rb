@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show], as: :dashboard
   resources :bookings, only: [:destroy]
   resources :users, only: [:destroy]
+  resources :superpowers, only: [:destroy]
 end
