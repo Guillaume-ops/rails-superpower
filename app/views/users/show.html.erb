@@ -12,12 +12,13 @@
               <div class="card-product">
                 <%= cl_image_tag booking.superpower.photo.key, height: 500, width: 400, crop: :fill %>
                 <div class="card-product-infos">
-                  <p><strong>Superpower:</strong> <%= booking.superpower.name %></p>
-                  <p><strong>Start Date:</strong> <%= booking.date_begin %></p>
-                  <p><strong>End Date:</strong> <%= booking.date_end %></p>
+                  <h2><strong>Superpower :</strong> <%= booking.superpower.name %></h2>
+                  <p><strong>Reservation Start Date :</strong> <%= booking.date_begin %></p>
+                  <p><strong>Reservation End Date :</strong> <%= booking.date_end %></p>
+                  <p><strong>Reservation price :</strong> <%= (booking.date_end - booking.date_begin).abs.to_i * booking.superpower.price %>$</p>
                 </div>
+                <%= link_to "Delete reservation", booking_path(booking), class: "btn btn-gradient", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
               </div>
-              <%= link_to "Delete reservation", booking_path(booking), class: "btn btn-gradient mt-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
             </li>
           <% end %>
         </ul>
