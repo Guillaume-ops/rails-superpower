@@ -1,14 +1,38 @@
-.card-superpower {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
-  background-position: center;
-  height: 450px;
-  width: 350px;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(150, 147, 147, 0.2);
-  object-fit: cover;
+h1 {
+  margin-left: 5%;
 }
 
-.hero-img {
+.card-superpower > img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    position: center;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+  }
+
+.card-superpower {
+  width: 35%;
+  height: 65%;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(150, 147, 147, 0.2);
+  margin-left: 10%;
+  background-color: white;
+}
+
+.card-power-infos {
+margin-left: 10px;
+}
+
+.container-superpower{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+}
+
+.booking {
+  width: 45%;
+  position: right;
+  margin-right: 5%;
 }
