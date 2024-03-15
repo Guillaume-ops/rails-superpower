@@ -1,7 +1,7 @@
 <h2> I rent my Superpower</h2>
 
 <%= simple_form_for @superpower do |f| %>
-<%= f.input :name, placaholder: 'Super-heros' %>
+<%= f.input :name, placeholder: 'Super-heros' %>
 <%= f.input :category, collection: ["Marvel", "DC Comics", "Disney"]%>
 <%= f.input :price %>
 <%= f.input :photo, as: :file %>
