@@ -1,0 +1,16 @@
+
+/* I rent my power stylesheet */
+#new_superpower{
+  width: 300px
+}
+
+.custom-form {
+  max-width: 500px; /* Largeur maximale du formulaire */
+  margin: 0 auto; /* Centrer le formulaire sur la page */
+  margin-left: 20px; /* Ajouter une marge de 20px à gauche */
+}
+
+.custom-input {
+  width: calc(100% - 40px); /* Conserver la largeur à 100% moins 40px de marges sur les côtés */
+  margin: 0 20px 10px; /* Marge de 20px sur les côtés et de 10px en bas */
+}

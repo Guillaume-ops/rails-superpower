@@ -1,10 +1,13 @@
 .btn-gradient {
-    color: white;
-    text-align: center;
-    padding: 8px 24px;
-    border-radius: 4px;
-    font-weight: bold;
-    background-color: red;
-    transition: 0.3s ease;
-    border: 1px solid red;
-  }
+  background: transparent; /* Fond transparent */
+  border: 2px solid red; /* Bordure rouge */
+  color: red; /* Couleur du texte rouge */
+  border-radius: 25px; /* Bord arrondi du bouton */
+  width: 200px; /* Largeur fixe des boutons */
+  text-align: center; /* Centrer le texte dans le bouton */
+}
+
+.btn-gradient:hover {
+  background: red; /* Fond rouge au survol */
+  color: white; /* Couleur du texte blanc au survol */
+}
