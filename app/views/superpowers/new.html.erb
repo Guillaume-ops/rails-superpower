@@ -1,11 +1,11 @@
-<h3> I rent my Superpower</h3>
+<h2> I rent my Superpower</h2>
 
 <%= simple_form_for @superpower do |f| %>
 <%= f.input :name, placaholder: 'Super-heros' %>
 <%= f.input :category, collection: ["Marvel", "DC Comics", "Disney"]%>
 <%= f.input :price %>
 <%= f.input :photo, as: :file %>
-<%= f.submit class: 'btn btn-gradient' %>
+<%= f.submit class:'btn btn-gradient'%>
 <% end  %>
 
 <%= link_to "Back to list", superpowers_path, class: "btn btn-gradient mt-3" %>
