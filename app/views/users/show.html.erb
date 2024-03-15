@@ -1,24 +1,29 @@
-<div class="m-3">
-  <h1><%= @user.name %></h1>
 
-  <%= link_to "Delete account", user_path(@user),class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+<h1 class="m-3"><%= @user.name %></h1>
+<div class="m-3">
+
   <div>
     <h2>Bookings:</h2>
-    <% if @bookings.any? %>
-      <ul>
-        <% @bookings.each do |booking| %>
-          <li>
-            <h3>Reservation details</h3>
-            <p><strong>Superpower:</strong> <%= booking.superpower.name %></p>
-            <p><strong>Start Date:</strong> <%= booking.date_begin %></p>
-            <p><strong>End Date:</strong> <%= booking.date_end %></p>
-            <p><%= cl_image_tag booking.superpower.photo.key, height: 500, width: 400, crop: :fill %></p>
-            <%= link_to "Supprimer la réservation", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-          </li>
-        <% end %>
-      </ul>
-    <% else %>
-      <p>No reservations found.</p>
-    <% end %>
+      <% if @bookings.any? %>
+        <ul>
+          <% @bookings.each do |booking| %>
+            <li>
+              <h3>Reservation details</h3>
+              <div class="card-product">
+                <%= cl_image_tag booking.superpower.photo.key, height: 500, width: 400, crop: :fill %>
+                <div class="card-product-infos">
+                  <p><strong>Superpower:</strong> <%= booking.superpower.name %></p>
+                  <p><strong>Start Date:</strong> <%= booking.date_begin %></p>
+                  <p><strong>End Date:</strong> <%= booking.date_end %></p>
+                </div>
+              </div>
+              <%= link_to "Delete reservation", booking_path(booking), class: "btn btn-gradient mt-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No reservations found.</p>
+      <% end %>
   </div>
+  <%= link_to "Delete account", user_path(@user), class: "btn btn-outline-light btn-sm", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </div>
