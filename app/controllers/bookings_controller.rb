@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     @superpower = Superpower.find(params[:superpower_id])
     @booking.superpower = @superpower
     if @booking.save
-      redirect_to dashboard_path(current_user), notice: 'Votre superpouvoir a bien été réservé'
+      redirect_to dashboard_path(current_user), notice: 'Your superpower has been reserved'
     else
       #flash.now[:alert] = 'Nous avons rencontré un problème avec la réservation de votre pouvoir'
       render :new, status: :unprocessable_entity
@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to root_path, notice: 'Nous avons bien pris en compte la suppression de votre réservation'
+    redirect_to dashboard_path(current_user), notice: 'We have taken into account the deletion of your reservation'
   end
 
   private
