@@ -1,16 +1,18 @@
 <div class = container >
   <h1>My List Of Superpower</h1>
 
-   <div class="cards-power">
+    <div class="cards-power">
         <% @superpowers.each do |superpower| %>
-           <%= link_to superpower_path(superpower) do %>
-            <div class="card-power" style= "background-image: url('<%= cl_image_path superpower.photo.key, crop: :fill %>')">
-
-              <%= superpower.name %>
-            </div>
-          <% end %>
-         <% end %>
+            <%= link_to superpower_path(superpower) do %>
+              <div class="card-power" style= "background-image: url('<%= cl_image_path superpower.photo.key, crop: :fill %>')">
+                <%= superpower.name %>
+              </div>
+            <% end %>
+        <% end %>
+        <%= link_to new_superpower_path do %>
+          <div class= "card-power" style= "background-image: url('https://preshrunk.org/wp-content/uploads/2016/12/RiddlerSMALL.jpg')">
+          Add your superpower
+          </div>
+        <% end %>
     </div>
 </div>
-
-<%= link_to "create a new superpower", new_superpower_path, class: "btn btn-primary" %>
